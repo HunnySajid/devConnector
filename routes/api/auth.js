@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
-
+const auth = require("../../middleware/auth");
+const AuthController = require("../../controllers/auth");
 // @route GET api/auth
-// @desc Test Route
+// @desc Token Route
 // @access Public
-router.get("/", (req, res) => {
-  return res.send("Auth Route");
-});
+router.get("/", auth, AuthController.authUser);
+
+// @route POST api/auth
+// @desc LOGIN Route
+// @access Public
+router.post(
+  "/",
+  [auth, AuthController.validateBody()],
+  AuthController.checkAuthUser
+);
 
 module.exports = router;

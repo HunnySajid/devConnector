@@ -5,8 +5,8 @@ const routeToPaths = require("./routes");
 const app = express();
 // connect database
 connectDB();
-// Init Middleware
-app.use(express.json({ extended: true }));
+// Init Middlewares
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => {
   return res.send("Hip Hip Hurrah Response");
