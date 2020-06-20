@@ -1,4 +1,0 @@
-{
-    "MONGO_URL": "mongodb+srv://hunainbinsajid:ibnesajid@cluster0-nesyq.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    "JWT_SECRET": "jbvdzhthisismynewsecretkgjdslkj"
-}
