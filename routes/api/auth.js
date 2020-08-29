@@ -10,10 +10,6 @@ router.get("/", auth, AuthController.authUser);
 // @route POST api/auth
 // @desc LOGIN Route
 // @access Public
-router.post(
-  "/",
-  [auth, AuthController.validateBody()],
-  AuthController.checkAuthUser
-);
+router.post("/", AuthController.validateBody(), AuthController.checkAuthUser);
 
 module.exports = router;
